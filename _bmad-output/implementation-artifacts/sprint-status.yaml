@@ -1,0 +1,116 @@
+# generated: 2026-02-12
+# project: qadir
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-02-12
+project: qadir
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Project Foundation & Brand Identity
+  epic-1: backlog
+  1-1-scaffold-monorepo-with-turborepo: backlog
+  1-2-implement-design-tokens-typography-system: backlog
+  1-3-build-site-layout-shell: backlog
+  1-4-create-sealmark-component: backlog
+  epic-1-retrospective: optional
+
+  # Epic 2: Brand Story & Collection Experience
+  epic-2: backlog
+  2-1-build-content-abstraction-layer: backlog
+  2-2-build-homepage-with-herosection: backlog
+  2-3-build-about-founder-page: backlog
+  2-4-build-signature-blends-collection-page: backlog
+  2-5-build-blend-detail-pages-with-olfactive-profile: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Appointment Booking Experience
+  epic-3: backlog
+  3-1-build-booking-api: backlog
+  3-2-build-availability-checking-double-booking-prevention: backlog
+  3-3-build-bookingflow-component: backlog
+  3-4-integrate-email-confirmations: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Contact & Lead Capture
+  epic-4: backlog
+  4-1-build-forms-api: backlog
+  4-2-build-contact-page-form: backlog
+  4-3-build-vip-private-page-form: backlog
+  4-4-integrate-email-routing-for-form-submissions: backlog
+  4-5-implement-spam-protection: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: SEO & Discoverability
+  epic-5: backlog
+  5-1-implement-per-page-meta-tags: backlog
+  5-2-generate-xml-sitemap-robots-txt: backlog
+  5-3-add-open-graph-social-sharing-tags: backlog
+  5-4-ensure-semantic-html-heading-hierarchy: backlog
+  5-5-implement-structured-data-json-ld: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Analytics & Business Insights
+  epic-6: backlog
+  6-1-integrate-privacy-respecting-analytics: backlog
+  6-2-track-booking-conversion-funnel: backlog
+  6-3-track-form-submission-rates: backlog
+  6-4-provide-founder-analytics-dashboard-access: backlog
+  epic-6-retrospective: optional
+
+  # Epic 7: Administration & Platform Security
+  epic-7: backlog
+  7-1-set-up-supabase-auth-for-admin-access: backlog
+  7-2-build-admin-api-endpoints: backlog
+  7-3-implement-role-based-access-foundation: backlog
+  7-4-ensure-extensibility-credential-ownership: backlog
+  epic-7-retrospective: optional
+
+  # Epic 8: Webhook & Automation System
+  epic-8: backlog
+  8-1-build-webhookmodule-with-event-subscription: backlog
+  8-2-build-admin-webhook-configuration: backlog
+  epic-8-retrospective: optional
+
+  # Epic 9: Production Infrastructure & Deployment
+  epic-9: backlog
+  9-1-containerize-applications-with-docker: backlog
+  9-2-configure-nginx-reverse-proxy-with-ssl: backlog
+  9-3-set-up-github-actions-ci-cd-pipeline: backlog
+  9-4-configure-database-backups: backlog
+  9-5-integrate-error-monitoring-sentry: backlog
+  9-6-implement-health-endpoint-uptime-monitoring: backlog
+  epic-9-retrospective: optional

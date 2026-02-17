@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blend {
+  id               String      @id @default(uuid())
+  name             String
+  slug             String      @unique
+  role             String
+  meaning          String
+  description      String
+  olfactiveProfile Json
+  imageUrl         String?
+  sortOrder        Int         @default(0)
+  price            Int?        // cents, e.g. 42500 = $425.00
+  sku              String?     @unique
+  inventory        Int?
+  currency         String?     @default("CAD")
+  stripeProductId  String?
+  stripePriceId    String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  orderItems       OrderItem[]
+
+  @@map("blends")
+}
+
+model Appointment {
+  id        String   @id @default(uuid())
+  type      String
+  date      String
+  time      String
+  name      String
+  email     String
+  message   String?
+  status    String   @default("PENDING")
+  clientId  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("appointments")
+}
+
+model FormSubmission {
+  id        String   @id @default(uuid())
+  type      String
+  name      String
+  email     String
+  subject   String?
+  message   String
+  clientId  String?
+  createdAt DateTime @default(now())
+
+  @@map("form_submissions")
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  email           String
+  name            String?
+  status          String      @default("PENDING")
+  totalCents      Int
+  currency        String      @default("CAD")
+  stripePaymentId String?     @unique
+  stripeSessionId String?     @unique
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id       String @id @default(uuid())
+  orderId  String
+  blendId  String
+  quantity Int    @default(1)
+  unitCents Int
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  blend    Blend  @relation(fields: [blendId], references: [id])
+
+  @@map("order_items")
+}
+
+model PageContent {
+  id        String   @id @default(uuid())
+  page      String   @unique
+  content   Json
+  updatedAt DateTime @updatedAt
+
+  @@map("page_contents")
+}
+
+model WebhookConfig {
+  id        String   @id @default(uuid())
+  event     String
+  url       String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("webhook_configs")
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+
+  @@map("admin_users")
+}

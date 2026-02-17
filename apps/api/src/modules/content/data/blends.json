@@ -1,0 +1,78 @@
+[
+  {
+    "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "ASL",
+    "slug": "asl",
+    "role": "Authority",
+    "meaning": "ASL (أصل) — Origin, Foundation. The root from which all else grows.",
+    "description": "ASL is the foundation of the QADIR collection — a fragrance that speaks before you do. Built on a base of refined oud and dry saffron, it opens with quiet confidence and deepens into a warm, resinous signature that lingers long after you've left the room. This is not a fragrance that announces; it is one that remains.",
+    "olfactiveProfile": [
+      { "category": "Top", "notes": ["Dry Saffron", "Black Pepper", "Bergamot"], "description": "A measured opening — saffron's warmth tempered by the precision of black pepper and a whisper of bergamot." },
+      { "category": "Heart", "notes": ["Refined Oud", "Rose Absolute", "Leather"], "description": "The core reveals itself slowly: oud in its most refined expression, softened by rose absolute and a subtle leather accord." },
+      { "category": "Base", "notes": ["Amber Resin", "Cedarwood", "Musk"], "description": "The foundation settles into amber warmth, grounded by cedarwood and carried by clean musk into the hours ahead." }
+    ],
+    "imageUrl": null,
+    "sortOrder": 1,
+    "price": null,
+    "sku": null,
+    "inventory": null,
+    "currency": null
+  },
+  {
+    "id": "b2a3c4d5-e6f7-8901-bcde-f12345678901",
+    "name": "NOOR",
+    "slug": "noor",
+    "role": "Light",
+    "meaning": "NOOR (نور) — Light, Radiance. The illumination that reveals without overwhelming.",
+    "description": "NOOR is luminosity rendered in scent — the lightest expression in the QADIR collection, yet no less considered. Where ASL speaks through depth, NOOR communicates through clarity. A fragrance for moments that require presence without weight, confidence without heaviness.",
+    "olfactiveProfile": [
+      { "category": "Top", "notes": ["Neroli", "Lemon Zest", "Pink Pepper"], "description": "An immediate brightness — neroli's clean radiance lifted by citrus and given edge by pink pepper's gentle warmth." },
+      { "category": "Heart", "notes": ["White Oud", "Jasmine Sambac", "Iris"], "description": "The heart opens into white oud's translucent character, woven with jasmine's richness and iris's powdery elegance." },
+      { "category": "Base", "notes": ["Sandalwood", "White Musk", "Ambrette"], "description": "A whisper of sandalwood, clean musk, and ambrette's skin-like warmth create a finish that feels like light on warm skin." }
+    ],
+    "imageUrl": null,
+    "sortOrder": 2,
+    "price": null,
+    "sku": null,
+    "inventory": null,
+    "currency": null
+  },
+  {
+    "id": "b3a4c5d6-e7f8-9012-cdef-123456789012",
+    "name": "HAYBA",
+    "slug": "hayba",
+    "role": "Presence",
+    "meaning": "HAYBA (هيبة) — Awe, Commanding Respect. The quality that fills a room before a word is spoken.",
+    "description": "HAYBA is presence made tangible — a fragrance that occupies space with quiet authority. Neither loud nor subtle, it exists in the territory between: unmistakable yet never aggressive. This is the blend for rooms that notice you before you speak, for impressions that form before introductions.",
+    "olfactiveProfile": [
+      { "category": "Top", "notes": ["Cardamom", "Incense", "Elemi Resin"], "description": "The opening is ceremonial — cardamom's warmth meeting incense smoke and the bright resinous quality of elemi." },
+      { "category": "Heart", "notes": ["Aged Oud", "Amber", "Tobacco Leaf"], "description": "At the core, aged oud in its most complex expression, enriched by warm amber and the dry, sophisticated character of tobacco leaf." },
+      { "category": "Base", "notes": ["Vetiver", "Benzoin", "Labdanum"], "description": "The finish is deep and lasting — vetiver's earthy sophistication, benzoin's vanilla warmth, and labdanum's rich, honeyed resin." }
+    ],
+    "imageUrl": null,
+    "sortOrder": 3,
+    "price": null,
+    "sku": null,
+    "inventory": null,
+    "currency": null
+  },
+  {
+    "id": "b4a5c6d7-e8f9-0123-def0-234567890123",
+    "name": "MIQDAR",
+    "slug": "miqdar",
+    "role": "Depth",
+    "meaning": "MIQDAR (مقدار) — Measure, Proportion. The precise calibration that transforms ingredients into art.",
+    "description": "MIQDAR is depth with precision — the most introspective blend in the QADIR collection. Where HAYBA commands attention outward, MIQDAR draws attention inward. A fragrance for contemplation, for evenings that slow down, for the quality of stillness that only careful measure can achieve.",
+    "olfactiveProfile": [
+      { "category": "Top", "notes": ["Cinnamon Bark", "Nutmeg", "Dark Plum"], "description": "A warm, spiced opening — cinnamon's depth, nutmeg's complexity, and the rich sweetness of dark plum creating an immediate sense of occasion." },
+      { "category": "Heart", "notes": ["Oud Noir", "Orris Root", "Saffron Absolute"], "description": "The darkest expression of oud in the collection, balanced by orris root's refined earthiness and saffron absolute's luxurious warmth." },
+      { "category": "Base", "notes": ["Mysore Sandalwood", "Castoreum", "Oakmoss"], "description": "A foundation of rare Mysore sandalwood, the animalic depth of castoreum, and oakmoss's green, forest-floor richness. The finish lasts for hours." }
+    ],
+    "imageUrl": null,
+    "sortOrder": 4,
+    "price": null,
+    "sku": null,
+    "inventory": null,
+    "currency": null
+  }
+]

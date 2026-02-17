@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "headline": "Modern perfumery rooted in oud tradition. Conceived in Montreal.",
+    "subtitle": "Four Signature Blends. Each one a deliberate statement of character.",
+    "cta_primary": { "label": "Discover the Collection", "href": "/collection" },
+    "cta_secondary": { "label": "Book a Consultation", "href": "/appointments" }
+  },
+  "brandStory": {
+    "headline": "The House of QADIR",
+    "sections": [
+      {
+        "title": "Origin",
+        "body": "QADIR Montreal was founded at the intersection of two traditions: the ancient art of oud-based perfumery from the Arabian Gulf, and the modern restraint of Montreal's creative culture. The result is a fragrance house that treats scent as architecture — where every note is placed with deliberate intent, and silence between notes matters as much as the notes themselves."
+      },
+      {
+        "title": "Philosophy",
+        "body": "We believe luxury is not decoration — it is confidence. Our four Signature Blends are not products; they are statements. Each blend carries a name rooted in Arabic, a role within the collection, and an olfactive profile designed to evolve on skin over hours. We do not chase trends. We craft permanence."
+      }
+    ]
+  },
+  "collectionPreview": {
+    "headline": "The Signature Collection",
+    "subtitle": "Four blends. Each one a deliberate statement."
+  }
+}
