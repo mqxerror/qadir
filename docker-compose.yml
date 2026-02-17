@@ -35,29 +35,20 @@ services:
       SESSION_SECRET: ${SESSION_SECRET:-qadir-session-prod-secret-2026}
     networks:
       - qadir-internal
-      - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.qadir-api.rule=Host(`api-qadir.pixelcraftedmedia.com`)
-      - traefik.http.routers.qadir-api.entrypoints=websecure
-      - traefik.http.routers.qadir-api.tls.certresolver=letsencrypt
-      - traefik.http.services.qadir-api.loadbalancer.server.port=3001
-      - traefik.http.routers.qadir-api-http.rule=Host(`api-qadir.pixelcraftedmedia.com`)
-      - traefik.http.routers.qadir-api-http.entrypoints=web
-      - traefik.http.routers.qadir-api-http.middlewares=qadir-redirect-https
-      - traefik.http.middlewares.qadir-redirect-https.redirectscheme.scheme=https
 
   qadir-web:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api-qadir.pixelcraftedmedia.com/api/v1}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://qadir.pixelcraftedmedia.com/api/v1}
         NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://qadir.pixelcraftedmedia.com}
         NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:-pk_test_REPLACE_ME}
     restart: unless-stopped
     depends_on:
       - qadir-api
+    environment:
+      INTERNAL_API_URL: http://qadir-api:3001/api/v1
     networks:
       - qadir-internal
       - dokploy-network
@@ -70,6 +61,7 @@ services:
       - traefik.http.routers.qadir-web-http.rule=Host(`qadir.pixelcraftedmedia.com`)
       - traefik.http.routers.qadir-web-http.entrypoints=web
       - traefik.http.routers.qadir-web-http.middlewares=qadir-redirect-https
+      - traefik.http.middlewares.qadir-redirect-https.redirectscheme.scheme=https
 
 volumes:
   qadir-pgdata:
