@@ -5,8 +5,7 @@ import { OlfactiveProfile } from '@/components/brand/olfactive-profile';
 import { PurchaseSection } from '@/components/payment/purchase-section';
 import { StickyBuyBar } from '@/components/payment/sticky-buy-bar';
 import { notFound } from 'next/navigation';
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
+import { serverFetch } from '@/lib/api';
 
 const BLENDS_ORDER = ['asl', 'noor', 'hayba', 'miqdar'];
 
@@ -18,14 +17,7 @@ const FALLBACK_BLENDS: Record<string, any> = {
 };
 
 async function getBlend(slug: string) {
-  try {
-    const res = await fetch(`${API_BASE}/blends/${slug}`, { next: { revalidate: 3600 } });
-    if (!res.ok) return FALLBACK_BLENDS[slug] || null;
-    const data: any = await res.json();
-    return data.data;
-  } catch {
-    return FALLBACK_BLENDS[slug] || null;
-  }
+  return serverFetch(`/blends/${slug}`, FALLBACK_BLENDS[slug] || null);
 }
 
 export async function generateStaticParams() {

@@ -1,23 +1,11 @@
 import type { Metadata } from 'next';
 import { BlendCard } from '@/components/brand/blend-card';
+import { serverFetch } from '@/lib/api';
 
 export const metadata: Metadata = { title: 'The Signature Collection' };
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
-
-async function getBlends() {
-  try {
-    const res = await fetch(`${API_BASE}/blends`, { next: { revalidate: 3600 } });
-    if (!res.ok) return [];
-    const data: any = await res.json();
-    return data.data;
-  } catch {
-    return [];
-  }
-}
-
 export default async function CollectionPage() {
-  const blends = await getBlends();
+  const blends = await serverFetch('/blends', []);
 
   const displayBlends = blends.length > 0 ? blends : [
     { name: 'ASL', slug: 'asl', role: 'Authority', imageUrl: null },

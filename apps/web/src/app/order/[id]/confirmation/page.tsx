@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = { title: 'Order Confirmation' };
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
+const SERVER_API_BASE = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
 
 async function getOrder(id: string) {
   try {
-    const res = await fetch(`${API_BASE}/payments/order/${id}`, { next: { revalidate: 0 } });
+    const res = await fetch(`${SERVER_API_BASE}/payments/order/${id}`, { next: { revalidate: 0 } });
     if (!res.ok) return null;
     const data: any = await res.json();
     return data.data;

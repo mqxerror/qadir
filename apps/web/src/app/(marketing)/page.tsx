@@ -2,33 +2,13 @@ import Image from 'next/image';
 import { HeroSection } from '@/components/brand/hero-section';
 import { BlendCard } from '@/components/brand/blend-card';
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll';
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
-
-async function getHomeContent() {
-  try {
-    const res = await fetch(`${API_BASE}/content/home`, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
-    const data: any = await res.json();
-    return data.data;
-  } catch {
-    return null;
-  }
-}
-
-async function getBlends() {
-  try {
-    const res = await fetch(`${API_BASE}/blends`, { next: { revalidate: 3600 } });
-    if (!res.ok) return [];
-    const data: any = await res.json();
-    return data.data;
-  } catch {
-    return [];
-  }
-}
+import { serverFetch } from '@/lib/api';
 
 export default async function HomePage() {
-  const [content, blends] = await Promise.all([getHomeContent(), getBlends()]);
+  const [content, blends] = await Promise.all([
+    serverFetch('/content/home', null),
+    serverFetch('/blends', []),
+  ]);
 
   const hero = content?.hero || {
     headline: 'Modern perfumery rooted in oud tradition. Conceived in Montreal.',

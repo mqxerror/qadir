@@ -1,24 +1,12 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll';
+import { serverFetch } from '@/lib/api';
 
 export const metadata: Metadata = { title: 'About' };
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
-
-async function getAboutContent() {
-  try {
-    const res = await fetch(`${API_BASE}/content/about`, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
-    const data: any = await res.json();
-    return data.data;
-  } catch {
-    return null;
-  }
-}
-
 export default async function AboutPage() {
-  const content = await getAboutContent();
+  const content = await serverFetch('/content/about', null);
 
   const sections = content ? [
     content.origin,
