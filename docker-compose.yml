@@ -48,6 +48,7 @@ services:
     depends_on:
       - qadir-api
     environment:
+      HOSTNAME: "0.0.0.0"
       INTERNAL_API_URL: http://qadir-api:3001/api/v1
     networks:
       - qadir-internal
