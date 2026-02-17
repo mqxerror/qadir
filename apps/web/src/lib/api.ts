@@ -24,7 +24,7 @@ export async function fetchApi<T = any>(
 }
 
 /** Server-side fetch with short timeout — fails fast during Docker build when API is unreachable. */
-export async function serverFetch<T = any>(path: string, fallback: T): Promise<T> {
+export async function serverFetch(path: string, fallback: any): Promise<any> {
   try {
     const res = await fetch(`${SERVER_API_BASE}${path}`, {
       next: { revalidate: 3600 },
